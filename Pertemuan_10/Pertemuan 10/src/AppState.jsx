@@ -44,8 +44,9 @@ function AppState() {
         <h2>Riwayat Minum</h2>
         {daftarCatatan.length === 0 && <p className="empty-state">Belum ada riwayat minum.</p>} {/* DITAMBAHKAN: pesan saat kosong */}
         <ul className="history-list">
+          {/* DIPERBAIKI: riwayat interaktif */}
           {daftarCatatan.map((catatan) => (
-            <ItemProps key={catatan.id} jumlah={catatan.jumlah} waktu={catatan.waktu} padaHapus={() => hapusCatatan(catatan.id)} /> {/* DIPERBAIKI: riwayat interaktif */}
+            <ItemProps key={catatan.id} jumlah={catatan.jumlah} waktu={catatan.waktu} padaHapus={() => hapusCatatan(catatan.id)} />
           ))}
         </ul>
       </div>
