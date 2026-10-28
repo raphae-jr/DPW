@@ -169,3 +169,6 @@ body {
   font-size: 13px;
   padding: 16px 0;
 }
+/* DITAMBAHKAN: susun contoh State dan Props agar sama-sama terlihat */
+.page-layout { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 24px; }
+.page-layout > .tracker-container { flex: 1 1 320px; }
