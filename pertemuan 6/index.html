@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Undangan Pernikahan - Romeo & Juliet</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img
+            src="../images/header1.jpg"
+            alt="Dekorasi Pernikahan"
+            class="gambar-header"
+        />
+
+        <h1>
+            The Wedding of<br />
+            Romeo & Juliet
+        </h1>
+
+        <p>
+            Dengan memohon rahmat dan ridho Tuhan, kami bermaksud
+            menyelenggarakan syukuran pernikahan kami.
+        </p>
+
+        <nav>
+    <ul class="menu-list">
+        <li><a href="#sambutan">Sambutan</a></li>
+        <li><a href="#acara">Acara</a></li>
+        <li><a href="#jadwal">Jadwal</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+</nav>
+    </header>
+
+
+    <!-- ISI UTAMA -->
+    <main>
+
+        <!-- SAMBUTAN -->
+        <section id="sambutan" class="bagian utama">
+
+            <img
+                src="../images/foto_pengantin.jpg"
+                alt="Foto Romeo dan Juliet"
+                class="foto-pengantin"
+            />
+
+            <h2>
+                Romeo Montague & Juliet Capulet
+            </h2>
+
+            <blockquote>
+                <p>
+                    <em>
+                        "Dua jiwa, satu rasi bintang, dan cinta yang menembus
+                        batas waktu. Selamat datang di hari penyatuan kisah kami."
+                    </em>
+                </p>
+            </blockquote>
+
+        </section>
+
+
+        <!-- ACARA -->
+        <section id="acara" class="bagian">
+
+            <h2>Susunan Acara</h2>
+
+            <ol>
+                <li>
+                    <strong>Akad Nikah:</strong>
+                    08.00 - 09.30 WIB
+                </li>
+
+                <li>
+                    <strong>
+                        Temu Tradisional & Sungkeman:
+                    </strong>
+                    09.30 - 10.30 WIB
+                </li>
+
+                <li>
+                    <strong>
+                        Resepsi & Ramah Tamah:
+                    </strong>
+                    11.00 - 16.00 WIB
+                </li>
+            </ol>
+
+            <p class="lokasi">
+                <strong>Lokasi:</strong>
+                Ballroom Hotel Grand, Lantai 2.
+            </p>
+
+            <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="tombol"
+            >
+                Buka Google Maps
+            </a>
+
+        </section>
+
+
+        <!-- JADWAL -->
+        <section id="jadwal" class="bagian">
+
+            <h2>Jadwal Sesi Undangan</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sesi</th>
+                        <th>Waktu</th>
+                        <th>Rombongan Tamu</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Sesi 1</td>
+                        <td>11.00 - 12.30</td>
+                        <td>Keluarga</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sesi 2</td>
+                        <td>12.30 - 14.00</td>
+                        <td>Rekan Kerja</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sesi 3</td>
+                        <td>14.00 - 16.00</td>
+                        <td>Sahabat & Tamu Umum</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- CATATAN -->
+        <aside class="catatan">
+
+            <h3>Catatan Penting</h3>
+
+            <p>
+                Tamu undangan disarankan hadir mengenakan
+                pakaian bernuansa
+                <mark>Batik / Pastel</mark>.
+            </p>
+
+        </aside>
+
+
+        <!-- RSVP -->
+        <section id="rsvp" class="bagian">
+
+            <h2>Konfirmasi Kehadiran</h2>
+
+            <form
+                action="/kirim-konfirmasi"
+                method="POST"
+            >
+
+                <!-- NAMA -->
+                <label for="namaTamu">
+                    Nama Lengkap:
+                </label>
+
+                <input
+                    type="text"
+                    id="namaTamu"
+                    name="nama_tamu"
+                    placeholder="Contoh: Budi Santoso"
+                    required
+                />
+
+
+                <!-- KEHADIRAN -->
+                <label>
+                    Kehadiran:
+                </label>
+
+                <div class="pilihan">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="status_kehadiran"
+                            value="hadir"
+                            checked
+                        />
+                        Pasti Hadir
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="status_kehadiran"
+                            value="ragu"
+                        />
+                        Masih Ragu
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="status_kehadiran"
+                            value="tidak"
+                        />
+                        Tidak Hadir
+                    </label>
+
+                </div>
+
+
+                <!-- JUMLAH TAMU -->
+                <label for="jumlahOrang">
+                    Jumlah Tamu:
+                </label>
+
+                <input
+                    type="number"
+                    id="jumlahOrang"
+                    name="jumlah_orang"
+                    min="1"
+                    max="5"
+                    value="1"
+                />
+
+
+                <!-- UCAPAN -->
+                <label for="pesanDoa">
+                    Ucapan & Doa:
+                </label>
+
+                <textarea
+                    id="pesanDoa"
+                    name="pesan_doa"
+                    rows="4"
+                    placeholder="Tuliskan ucapan dan doa..."
+                ></textarea>
+
+
+                <!-- TOMBOL -->
+                <input
+                    type="submit"
+                    value="Kirim Konfirmasi"
+                    class="kirim"
+                />
+
+
+                <!-- KOTAK -->
+                <div id="kotak" class="box">
+    Hallo bary
+    <span style="display: none;">Ini adalah teks tersembunyi</span>
+</div>
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <img
+            src="../images/logo_footer.jpg"
+            alt="Logo Pernikahan"
+            class="gambar-footer"
+        />
+
+        <div class="footer-text">
+
+            <p>
+                Merupakan suatu kehormatan bagi kami atas
+                kehadiran dan doa restu Anda.
+            </p>
+
+            <p>
+                Kami yang berbahagia,<br />
+
+                <strong>
+                    Keluarga Besar Romeo & Juliet
+                </strong>
+            </p>
+
+            <small>
+                © 2026 The Wedding of Romeo & Juliet
+            </small>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

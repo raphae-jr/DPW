@@ -1,0 +1,347 @@
+/* Penjelasan:
+   Selector universal mengatur box-sizing agar ukuran elemen
+   lebih mudah dikontrol. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Penjelasan:
+   Body mengatur tampilan dasar seluruh halaman seperti
+   font, warna teks, background, dan jarak antarbaris. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f4f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Penjelasan:
+   Header merupakan bagian atas halaman.
+   Warna gelap digunakan agar memiliki kontras yang jelas. */
+header {
+    background-color: #5d4037;
+    color: white;
+    padding: 30px 8%;
+    text-align: center;
+}
+
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+
+header p {
+    margin-bottom: 20px;
+}
+
+
+/* Penjelasan:
+   Flexbox membuat menu navigasi tersusun horizontal
+   dan tetap fleksibel pada berbagai ukuran layar. */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+}
+
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #795548;
+    padding: 9px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    background-color: #a1887f;
+}
+
+
+/* Penjelasan:
+   Main membatasi lebar konten agar halaman tetap nyaman
+   dibaca pada monitor berukuran besar. */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+
+/* Penjelasan:
+   Section dan aside dibuat seperti kartu agar
+   masing-masing kelompok informasi mudah dibedakan. */
+section,
+aside {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Penjelasan:
+   Heading memiliki ukuran dan warna berbeda untuk
+   membentuk hierarki informasi yang jelas. */
+h2 {
+    color: #5d4037;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+
+h3 {
+    color: #795548;
+    font-size: 1.3rem;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+
+p {
+    margin-bottom: 12px;
+}
+
+
+/* Penjelasan:
+   Gambar dibuat responsif menggunakan max-width 100%
+   agar tidak keluar dari layar perangkat kecil. */
+.foto-pengantin {
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
+
+/* Penjelasan:
+   Blockquote diberi tampilan berbeda untuk menandai
+   bahwa konten tersebut merupakan sebuah kutipan. */
+blockquote {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f3e9e5;
+    border-left: 5px solid #795548;
+    border-radius: 6px;
+}
+
+
+ol,
+ul {
+    margin: 12px 0 12px 25px;
+}
+
+
+/* Penjelasan:
+   Link pada konten utama diberi warna khusus
+   agar mudah dikenali oleh pengguna. */
+main a {
+    color: #6d4c41;
+    font-weight: bold;
+}
+
+
+main a:hover {
+    color: #3e2723;
+}
+
+
+/* Penjelasan:
+   CSS Grid membagi materi menjadi dua kolom
+   sehingga penyajian informasi lebih terstruktur. */
+.grid-materi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+
+/* Penjelasan:
+   Article digunakan sebagai kartu untuk setiap
+   kelompok materi HTML. */
+article {
+    padding: 20px;
+    background-color: #faf7f5;
+    border: 1px solid #e0d5d0;
+    border-radius: 10px;
+}
+
+
+/* Penjelasan:
+   Class warna digunakan pada elemen span untuk
+   memberi penekanan pada informasi dresscode. */
+.warna {
+    color: #8b1e3f;
+    font-weight: bold;
+}
+
+
+/* Penjelasan:
+   Overflow-x memungkinkan tabel digeser secara horizontal
+   apabila ukuran layar terlalu kecil. */
+.table-container {
+    overflow-x: auto;
+}
+
+
+/* Penjelasan:
+   Border-collapse menggabungkan garis antar sel tabel
+   sehingga tampilannya lebih bersih. */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+
+th {
+    background-color: #5d4037;
+    color: white;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f7f2ef;
+}
+
+
+/* Penjelasan:
+   Form menggunakan Flexbox dengan arah vertikal
+   agar setiap input tersusun rapi dari atas ke bawah. */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+
+/* Penjelasan:
+   Input dan textarea dibuat memenuhi lebar container
+   sehingga lebih nyaman digunakan. */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    font: inherit;
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Penjelasan:
+   Flexbox digunakan agar pilihan radio dapat
+   disusun sejajar dan tetap responsif. */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Penjelasan:
+   Tombol submit diberi tampilan berbeda agar
+   mudah dikenali sebagai tombol aksi utama. */
+input[type="submit"] {
+    background-color: #5d4037;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #795548;
+}
+
+
+/* Penjelasan:
+   Elemen code diberi background berbeda agar
+   contoh sintaks HTML mudah dibedakan dari teks biasa. */
+code {
+    background-color: #eee9e6;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+}
+
+
+/* Penjelasan:
+   Footer merupakan bagian penutup halaman. */
+footer {
+    background-color: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+
+footer p {
+    margin: 5px;
+}
+
+
+/* Penjelasan:
+   Media query membuat tampilan responsif pada HP.
+   Grid dua kolom berubah menjadi satu kolom dan
+   navigasi disusun vertikal. */
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .grid-materi {
+        grid-template-columns: 1fr;
+    }
+
+    section,
+    aside {
+        padding: 20px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

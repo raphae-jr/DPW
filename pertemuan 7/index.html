@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Login Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: #ffffff;
+      padding: 24px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 300px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .login-box h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .error-msg {
+      color: red;
+      font-size: 12px;
+      display: block;
+      margin-top: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 9px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h3>Form Login</h3>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username / Nama:</label>
+        <input type="text" id="username" autocomplete="off">
+        <span id="userError" class="error-msg"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <span id="passError" class="error-msg"></span>
+      </div>
+
+      <button type="submit" id="btnSubmit" disabled>Masuk</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const userInput = document.getElementById('username');
+    const passInput = document.getElementById('password');
+    const userError = document.getElementById('userError');
+    const passError = document.getElementById('passError');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    // 1. Validasi Real-time dengan Event 'input'
+    function validateForm() {
+      let isUserValid = false;
+      let isPassValid = false;
+
+      // Pengecekan username tidak boleh kosong
+      if (userInput.value.trim().length > 0) {
+        userError.textContent = '';
+        isUserValid = true;
+      } else {
+        userError.textContent = 'Username wajib diisi.';
+      }
+
+      // Pengecekan password minimal 6 karakter
+      if (passInput.value.length >= 6) {
+        passError.textContent = '';
+        isPassValid = true;
+      } else {
+        passError.textContent = 'Password minimal 6 karakter.';
+      }
+
+      // Tombol submit hanya aktif jika kedua kondisi terpenuhi
+      btnSubmit.disabled = !(isUserValid && isPassValid);
+    }
+
+    userInput.addEventListener('input', validateForm);
+    passInput.addEventListener('input', validateForm);
+
+    // 2. Penanganan Pengiriman Data dengan Event 'submit'
+    loginForm.addEventListener('submit', function(event) {
+      // Mencegah halaman reload otomatis
+      event.preventDefault();
+
+      alert('Login berhasil! Selamat datang, ' + userInput.value);
+      loginForm.reset();
+      btnSubmit.disabled = true;
+    });
+  </script>
+
+</body>
+</html>
